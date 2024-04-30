@@ -1,0 +1,9 @@
+{
+  "name": "@nzws/zenn-articles",
+  "packageManager": "yarn@4.1.1",
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "1.7.2",
+    "zenn-cli": "0.1.153"
+  }
+}
