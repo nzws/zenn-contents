@@ -1,5 +1,5 @@
 ---
-title: "Playwright でタイマーモックが使えるようになった"
+title: "Playwright でタイマーモックが使えるようになる"
 emoji: "⏰"
 type: "tech"
 topics:
