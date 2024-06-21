@@ -9,7 +9,8 @@
     "format:text": "textlint --fix \"**/*.md\"",
     "format:prettier": "prettier --write --cache .",
     "format": "yarn format:text && yarn format:prettier",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dev": "zenn preview"
   },
   "devDependencies": {
     "husky": "9.0.11",
