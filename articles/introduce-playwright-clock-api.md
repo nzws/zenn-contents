@@ -22,14 +22,14 @@ https://playwright.dev/docs/next/api/class-clock
 # 背景
 
 背景について簡単に説明すると、タイマーモックは自動テスト内で時間を操り、コード内で時間に依存するような機能を上手く短時間でテストさせるための機能です。  
-ユニットテストフレームワークの Jest[^1] や Vitest[^2] は標準機能としてタイマーモックが提供されていますが、E2E テストフレームワークの Playwright ではタイマーモックが今まで機能として提供されていませんでした。
+ユニットテストフレームワークの Jest[^1] や Vitest[^2] は標準機能としてタイマーモックが提供されていますが、E2E テストフレームワークの Playwright ではタイマーモックが今まで標準機能としては提供されていませんでした。[^3]
 
 余談ですが前述の Jest や Vitest だと `setTimeout`/`setInterval` みたいなものは標準機能でモックされるものの、`Date` はモックされないため [MockDate](https://github.com/boblauer/MockDate) 等をよく使用すると思います。一方 Playwright は `Date` も含めてモックする Clock API として実装されるようです。  
-また、私は使用していないためこの記事を書く際に知りましたが、先発の E2E テストフレームワークである Cypress[^3] は同様の Clock API をすでに実装しているようです。
+また、私は使用していないためこの記事を書く際に知りましたが、先発の E2E テストフレームワークである Cypress[^4] は同様の Clock API をすでに実装しているようです。
 
 # Clock API について
 
-Playwright の Clock API は以下の時間に関係するクラス/関数のモックをサポートしています。[^4]
+Playwright の Clock API は以下の時間に関係するクラス/関数のモックをサポートしています。[^5]
 
 - `Date`
 - `setTimeout`
@@ -122,7 +122,7 @@ test("1時間後にログアウトする", async ({ page }) => {
 
 `clock.fastForward` では一瞬で指定時間に設定できます。
 
-`clock.runFor` では早送りで設定するのに対して `clock.fastForward` は一瞬で設定するため fastForward の方が高速に実行できます。ただし fastForward は interval も 1 回しか発火しないため、前述のカウンターの例では正常に動作させることができません。これはドキュメントにも記載があります。[^5]
+`clock.runFor` では早送りで設定するのに対して `clock.fastForward` は一瞬で設定するため fastForward の方が高速に実行できます。ただし fastForward は interval も 1 回しか発火しないため、前述のカウンターの例では正常に動作させることができません。これはドキュメントにも記載があります。[^6]
 
 > Only fires due timers at most once. This is equivalent to user closing the laptop lid for a while and reopening it later, after given time.
 
@@ -207,8 +207,10 @@ await page.clock.pauseAt(new Date("2024-02-02T10:00:00Z"));
 
 [^2]: https://vitest.dev/guide/mocking.html#timers
 
-[^3]: https://docs.cypress.io/api/commands/clock
+[^3]: Sinon.js を注入して無理やり実行する方法はあったようです。参考： https://blog.70-10.net/posts/playwright-fake-timer/
 
-[^4]: https://playwright.dev/docs/next/clock
+[^4]: https://docs.cypress.io/api/commands/clock
 
-[^5]: https://playwright.dev/docs/next/api/class-clock#clock-fast-forward
+[^5]: https://playwright.dev/docs/next/clock
+
+[^6]: https://playwright.dev/docs/next/api/class-clock#clock-fast-forward
