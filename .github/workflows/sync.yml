@@ -1,0 +1,22 @@
+name: Sync repository between private/public
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  force_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SYNC_PAT }}
+
+      - name: Force push to destination repository
+        run: |
+          git remote add destination https://github.com/${{ vars.DEST_REPO }}.git
+          git push destination main --force
