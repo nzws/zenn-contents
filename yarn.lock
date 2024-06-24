@@ -55,9 +55,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nzws/zenn-articles@workspace:.":
+"@nzws/zenn-contents@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@nzws/zenn-articles@workspace:."
+  resolution: "@nzws/zenn-contents@workspace:."
   dependencies:
     husky: "npm:9.0.11"
     prettier: "npm:3.3.2"
