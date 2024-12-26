@@ -380,7 +380,7 @@ OccupancySensor（人感センサー）サービス[^5]は OccupancyDetected（�
 
 https://www.home-assistant.io/
 
-Homebridge プラグインのアクセサリーを HomeKit Device インテグレーション[^6]を使って HASS 側で使用できるようにすると、OccupancySensor (Homebridge) アクセサリーが BinarySensor (HASS) エンティティとして登録されます。
+Homebridge プラグインのアクセサリーを HomeKit Device インテグレーション[^6]を使って HASS 側で使用できるようにすると、OccupancySensor（Homebridge）アクセサリーが BinarySensor（HASS）エンティティとして登録されます。
 
 ![](/images/articles/i-made-smart-older-doorbell/6.png)
 _HASS のダッシュボード_
