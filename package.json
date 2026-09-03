@@ -1,6 +1,6 @@
 {
   "name": "@nzws/zenn-contents",
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@4.18.0",
   "private": true,
   "scripts": {
     "lint:text": "textlint \"**/*.md\"",
@@ -14,14 +14,14 @@
   },
   "devDependencies": {
     "husky": "9.1.7",
-    "prettier": "3.4.2",
-    "textlint": "14.4.2",
-    "textlint-filter-rule-comments": "1.2.2",
+    "prettier": "3.9.6",
+    "textlint": "14.8.4",
+    "textlint-filter-rule-comments": "1.3.0",
     "textlint-rule-ja-hiragana-fukushi": "1.3.0",
     "textlint-rule-ja-hiragana-hojodoushi": "1.1.0",
     "textlint-rule-preset-ja-spacing": "2.4.3",
     "textlint-rule-preset-ja-technical-writing": "12.0.2",
-    "textlint-rule-preset-jtf-style": "3.0.1",
-    "zenn-cli": "0.1.158"
+    "textlint-rule-preset-jtf-style": "3.0.3",
+    "zenn-cli": "0.5.3"
   }
 }
